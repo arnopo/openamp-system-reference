@@ -16,5 +16,5 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyr
-      revision: 356c8cbe63ae01b3ab438382639d25bb418a0213
+      revision: v3.5.0-rc3
       import: true
