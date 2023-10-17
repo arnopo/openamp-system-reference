@@ -7,6 +7,8 @@ manifest:
       url-base: https://github.com/OpenAMP
     - name: zephyr
       url-base: https://github.com/zyphyrproject-rtos
+    - name: wam
+      url-base: https://github.com/wmamills
   defaults:
     remote: openamp
 
@@ -18,3 +20,21 @@ manifest:
       remote: zephyr
       revision: v3.5.0-rc3
       import: true
+
+    - name: libmetal
+      path: libmetal
+      revision: main
+
+    - name: libmetal-module
+      remote: wam
+      repo-path: openamp-system-reference
+      revision: libmetal-module
+
+    - name: open-amp
+      path: open-amp
+      revision: main
+
+    - name: open-amp-module
+      remote: wam
+      repo-path: openamp-system-reference
+      revision: open-amp-module
