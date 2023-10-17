@@ -6,7 +6,7 @@ manifest:
     - name: openamp
       url-base: https://github.com/OpenAMP
     - name: zephyr
-      url-base: https://github.com/zyphyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
     - name: wam
       url-base: https://github.com/wmamills
   defaults:
