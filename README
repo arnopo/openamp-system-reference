@@ -1,0 +1,11 @@
+OpenAMP Zephyr Module Support
+#############################
+
+Standalone Zephyr Module support for upstream open-amp
+   https://github.com/OpenAMP/open-amp
+
+This branch carries the zephyr module support to use 
+upstream open-amp with zephyr.
+
+It assumes that the real open-amp has been cloned as a peer to this directory
+with the name open-amp.
