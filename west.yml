@@ -7,8 +7,8 @@ manifest:
       url-base: https://github.com/OpenAMP
     - name: zephyr
       url-base: https://github.com/zephyrproject-rtos
-    - name: wam
-      url-base: https://github.com/wmamills
+    - name: arnopo
+      url-base: https://github.com/arnopo
   defaults:
     remote: openamp
 
@@ -25,16 +25,12 @@ manifest:
       path: libmetal
       revision: main
 
-    - name: libmetal-module
-      remote: wam
-      repo-path: openamp-system-reference
-      revision: libmetal-module
-
     - name: open-amp
       path: open-amp
       revision: main
 
-    - name: open-amp-module
-      remote: wam
+    - name: openamp-zephyr-module
+      remote: arnopo
       repo-path: openamp-system-reference
-      revision: open-amp-module
+      revision: openamp-zephyr-module
+
