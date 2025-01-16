@@ -1,0 +1,37 @@
+# Copyright (c) 2024 STMicroelectronics
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  remotes:
+    - name: openamp
+      url-base: https://github.com/OpenAMP
+    - name: arnopo
+      url-base: https://github.com/arnopo
+  defaults:
+    remote: openamp
+
+  self:
+    path: openamp-system-reference
+
+  projects:
+    - name: zephyr
+      repo-path: open-amp-zephyr
+      remote: arnopo
+      revision: virtio_msg
+      import: true
+
+    # as we use the same names as in the zephyr manifest,
+    # our definitions eclipse their's
+    - name: libmetal
+      revision: main
+
+    - name: open-amp
+      remote: arnopo
+      revision: virtio-msg
+
+    # however, our version does not have the zephyr module glue
+    # so bring in our custom version that integrates both libraries
+    # as a single zephyr module
+    - name: openamp-zephyr-modules
+      remote: arnopo
+      revision: virtio-msg
