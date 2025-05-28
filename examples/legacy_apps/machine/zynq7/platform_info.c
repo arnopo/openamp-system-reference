@@ -40,8 +40,6 @@
 #define SCUGIC_PERIPH_BASE	0xF8F00000
 #define SCUGIC_DIST_BASE	(SCUGIC_PERIPH_BASE + 0x00001000)
 
-#define _rproc_wait() asm volatile("wfi")
-
 /*
  * processor operations for hil_proc for A9. It defines
  * notification operation and remote processor management.
@@ -132,6 +130,12 @@ platform_create_proc(int proc_index, int rsc_index)
 	xil_printf("Initialize remoteproc successfully.\r\n");
 
 	return &rproc_inst;
+}
+
+
+void system_generic_suspend(void)
+{
+	asm volatile("wfi")
 }
 
 int platform_init(int argc, char *argv[], void **platform)
@@ -239,7 +243,7 @@ int platform_poll(void *priv)
 			remoteproc_get_notification(rproc, RSC_NOTIFY_ID_ANY);
 			break;
 		}
-		_rproc_wait();
+		system_suspend();
 		metal_irq_restore_enable(flags);
 	}
 	return 0;
